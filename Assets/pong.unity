@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 1251108498}
   - component: {fileID: 1251108497}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 2083787862}
   - component: {fileID: 2083787861}
   m_Layer: 0
-  m_Name: Square
+  m_Name: LPlayer
   m_TagString: LPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 2133745173}
   - component: {fileID: 2133745172}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: RPlayer
   m_TagString: RPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
