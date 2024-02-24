@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Ballmovement : MonoBehaviour
 {
     //variables for the game
-    public float xSpeed = 0.025f; //variable for the movement on the x-axis
+    public float xSpeed = 0.015f; //variable for the movement on the x-axis
     public float xBorder = 10f;
     public bool xMove = true;
     public bool yMove = true;
-    public float ySpeed = 0.025f; //variable for the movement on the y-axis
+    public float ySpeed = 0.015f; //variable for the movement on the y-axis
     public float yBorder = 4.5f; 
+    public int leftPlayerScore;
+    public int rightPlayerScore;
+    public Text scoreTextLP;
+    public Text scoreTextRP; 
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +35,12 @@ public class Ballmovement : MonoBehaviour
   
         if (transform.position.x >= xBorder) {
             xMove = false;
+            leftPlayerScore++;
         }
         else if (transform.position.x <= -xBorder)
         {
             xMove=true; 
+            rightPlayerScore++;
         }
         if (yMove == true)
         {
@@ -51,6 +57,8 @@ public class Ballmovement : MonoBehaviour
         {
             yMove=true;
         }
+        scoreTextLP.text = leftPlayerScore.ToString();
+        scoreTextRP.text = rightPlayerScore. ToString(); 
     }
         void OnCollisionEnter2D(Collision2D collision) {
         
@@ -66,6 +74,19 @@ public class Ballmovement : MonoBehaviour
                     xMove = true;
                 }
             }
+                 if (collision.collider.CompareTag ("LPlayer"))
+            {
+                Debug.Log("hit");
+                if (xMove == true)
+                {
+                    xMove = false; 
+                }
+                else if (xMove == false)
+                {
+                    xMove = true;
+                }
+            }
+            
 
         }
 
